@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "AgriConnect - User Module",
+    "description": "Phase 1: User Module CRUD APIs for the AgriConnect Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api/users" },
+    { "key": "userId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ramesh Kumar\",\n  \"email\": \"ramesh.kumar@example.com\",\n  \"phone\": \"9876543210\",\n  \"password\": \"Farmer@123\",\n  \"role\": \"FARMER\",\n  \"location\": \"Hubballi, Karnataka\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}", "host": ["{{baseUrl}}"] }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}", "host": ["{{baseUrl}}"] }
+      }
+    },
+    {
+      "name": "Get User By Id",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/{{userId}}", "host": ["{{baseUrl}}"], "path": ["{{userId}}"] }
+      }
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ramesh Kumar\",\n  \"email\": \"ramesh.kumar@example.com\",\n  \"phone\": \"9876543210\",\n  \"role\": \"FARMER\",\n  \"location\": \"Dharwad, Karnataka\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/{{userId}}", "host": ["{{baseUrl}}"], "path": ["{{userId}}"] }
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/{{userId}}", "host": ["{{baseUrl}}"], "path": ["{{userId}}"] }
+      }
+    }
+  ]
+}
