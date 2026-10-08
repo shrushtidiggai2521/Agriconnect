@@ -1,0 +1,17 @@
+import api from './api'
+
+const FarmerService = {
+  getAll() {
+    return api.get('/farmers').then((res) => res.data)
+  },
+
+  getById(id) {
+    return api.get(`/farmers/${id}`).then((res) => res.data)
+  },
+
+  updateProfile(payload) {
+    return api.put('/farmers/me', payload).then((res) => res.data)
+  },
+}
+
+export default FarmerService
